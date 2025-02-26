@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockchain Game</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
-    <script defer src="game.js"></script>
 </head>
 <body>
     <h1>Blockchain Game</h1>
-    <button onclick="recordGameResult(100, 10, 3)">Save Result</button>
-    <button onclick="getLastGameResult()">Get Last Result</button>
+    <button id="connectWallet">Connect Wallet</button>
+    <div id="walletStatus">Not Connected</div>
+    <div id="score">Score: 0</div>
+    <div id="lastScore">Last Recorded Score: -</div>
+    
+    <div id="queue"></div>
+    <div id="board"></div>
+    <div id="gameOver"></div>
+
+    <script src="game.js"></script>
 </body>
 </html>
