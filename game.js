@@ -30,7 +30,7 @@ document.getElementById("connectWallet").addEventListener("click", async () => {
     try {
         await window.ethereum.request({ method: "eth_requestAccounts" });
         document.getElementById("walletStatus").innerText = "Wallet Connected";
-        updateLastScore();
+        await updateLastScore();
     } catch (err) {
         console.error("Connection failed", err);
     }
@@ -58,6 +58,7 @@ async function updateLastScore() {
         document.getElementById("lastScore").innerText = "Last Recorded Score: " + lastScore;
     } catch (error) {
         console.error("Error fetching last score:", error);
+        document.getElementById("lastScore").innerText = "Last Recorded Score: No record found";
     }
 }
 
